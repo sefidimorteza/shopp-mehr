@@ -10,3 +10,6 @@
 .page-leave-to {
     opacity: 0;
 }
+.carousel__viewport {
+    border-radius: 15px;
+}
