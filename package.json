@@ -1,0 +1,24 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
+    "@vee-validate/nuxt": "^4.12.6",
+    "@vee-validate/yup": "^4.12.6",
+    "nuxt": "^3.10.3",
+    "ohmyfetch": "^0.4.21",
+    "pinia": "^2.1.7",
+    "usebootstrap": "^3.5.3",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0",
+    "yup": "^1.4.0"
+  }
+}

@@ -1,0 +1,12 @@
+.error-input {
+    border-color: red !important;
+}
+
+.page-enter-active,
+.page-leave-active {
+    transition: all 0.3s ease;
+}
+.page-enter-from,
+.page-leave-to {
+    opacity: 0;
+}
