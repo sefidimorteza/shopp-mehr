@@ -4,7 +4,7 @@ export interface BannerDto {
     creationDate: string;
     link: string;
     imageName: string;
-    position: bannerPosition;
+    position: BannerPosition;
 }
 export interface SliderDto {
     creationDate: string;
@@ -12,15 +12,15 @@ export interface SliderDto {
     link: string;
     imageName: string;
 }
-export enum bannerPosition {
-    زیر_اسلایدر = 0,
-    سمت_چپ_اسلایدر = 1,
-    بالای_اسلایدر = 2,
-    سمت_راست_شگفت_انگیز = 3,
-    وسط_صفحه = 4
+export enum BannerPosition {
+    زیر_اسلایدر,
+    سمت_چپ_اسلایدر,
+    بالای_اسلایدر,
+    سمت_راست_شگفت_انگیز,
+    وسط_صفحه
 }
 export interface HomeDataDto {
-    banner: BannerDto[];
+    banners: BannerDto[];
     sliders: SliderDto[];
     latestProduct: productCardDto[];
     amazingProducts: productCardDto[]

@@ -1,45 +1,16 @@
 <template>
   <div>
-    <div class="row mb-3 d-sm-block d-none">
-      <div class="col-12">
-        <!-- start of banner -->
-        <div class="banner-img">
-          <a href="#"><img src="/images/banner/025.gif" alt="banner" /></a>
-        </div>
-        <!-- end of banner -->
-      </div>
-    </div>
+    <home-banner :banners="data?.data.banners" :position="BannerPosition.بالای_اسلایدر" />
     <div class="row mb-5">
       <div class="col-lg-8 mb-lg-0 mb-4">
         <!-- start of main-slider -->
-        <home-main-slider :data="data?.data.sliders " />
+        <home-main-slider :data="data?.data.sliders" />
         <!-- end of main-slider -->
       </div>
       <div class="col-lg-4">
         <div class="row">
-          <div class="col-lg-12 col-6 mb-lg-3">
-            <!-- start of banner -->
-            <div class="banner-img banner-side-main-slider bg-position-right">
-              <a href="#" style="
-                  background-image: url(/images/banner/026.jpg);
-                  height: 220px;
-                ">
-                <img src="/images/banner/026.jpg" alt="" />
-              </a>
-            </div>
-            <!-- end of banner -->
-          </div>
           <div class="col-lg-12 col-6">
-            <!-- start of banner -->
-            <div class="banner-img banner-side-main-slider bg-position-right">
-              <a href="#" style="
-                  background-image: url(/images/banner/027.jpg);
-                  height: 220px;
-                ">
-                <img src="/images/banner/027.jpg" alt="" />
-              </a>
-            </div>
-            <!-- end of banner -->
+            <home-banner :banners="data?.data.banners" :position="BannerPosition.سمت_چپ_اسلایدر" />
           </div>
         </div>
       </div>
@@ -638,6 +609,7 @@
     </div>
     <!-- end of box => categories-slider -->
     <div class="row mb-5">
+    <home-banner :banners="data?.data.banners" :position="BannerPosition.وسط_صفحه" />
       <div class="col-md-3 col-6 mb-lg-0 mb-3">
         <!-- start of banner -->
         <div class="banner-img">
@@ -1160,12 +1132,11 @@
 
 <script setup lang="ts">
 
-import type { HomeDataDto } from "~/models/home/homeDataDto";
+import { BannerPosition, type HomeDataDto } from "../models/home/homeDataDto";
 import { FetchApi } from "../utilities/CoustomFetch"
 
 
-
-const { pending, data } = useLazyAsyncData('main-page', () => FetchApi<HomeDataDto>('Utilities/MainPageData'))
+const { pending, data } = useAsyncData("main-page", () => FetchApi<HomeDataDto>('Utilities/MainPageData'))
 
 
 </script>

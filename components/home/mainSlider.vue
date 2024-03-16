@@ -7,7 +7,6 @@
         </slide>
         <template #addons="{ slidesCount }">
             <div class="slider__navigation">
-
                 <button class="btn swiper-button-prev" v-if="slidesCount > currentSlide + 1"
                     @click="currentSlide += 1"></button>
                 <button class="btn swiper-button-next" v-if="currentSlide > 0" @click="currentSlide -= 1"></button>
@@ -24,7 +23,7 @@
 
 <script setup lang="ts">
 import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import { Carousel, Slide } from 'vue3-carousel'
 import type { SliderDto } from '~/models/home/homeDataDto';
 import { GetSliderImage } from '~/utilities/ImageUrl';
 const currentSlide = ref(0)
@@ -33,7 +32,6 @@ const currentSlide = ref(0)
 const props = defineProps<{
     data: SliderDto[]
 }>()
-
 const isShow = ref(false)
 
 onMounted(() => {
@@ -52,6 +50,7 @@ onMounted(() => {
 
 .carousel__item img {
     width: 100%;
+    height: 455px;
     border-radius: 15px;
 }
 
