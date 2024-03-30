@@ -1,5 +1,5 @@
 <template>
-    <carousel dir="rtl" v-model="currentSlide" wrap-around :autoplay="2500" v-if="isShow">
+    <carousel dir="rtl" v-model="currentSlide" wrap-around :autoplay="2500" :itemToShow="1" v-if="isShow">
         <slide class="swiper-slide main-swiper-slide" v-for="(item, index) in data" :key="index">
             <a class="carousel__item" href="#">
                 <img :src="GetSliderImage(item.imageName)" :alt="item.title" />
